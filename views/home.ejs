@@ -1,15 +1,16 @@
-<h1>
-    Socialise / <%= title %>
-</h1>
 
-<a href="/users/sign-in">signin</a>
-<a href="/users/sign-up">signup</a>
+<link rel="stylesheet" href="/css/home.css">
+<h1>
+    Lets Socialise!
+</h1>
 
 
 <section id="feed-posts">
+    <% if(locals.user){%>
     <h4>Posts</h4>
-    <form action="" method="post">
+    <form action="/users/posts/createpost" method="post">
         <textarea name="content" id="" cols="30" rows="3" placeholder="type here"></textarea>
         <input type="submit" value="post">
     </form>
+    <%}%>
 </section>

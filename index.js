@@ -13,18 +13,20 @@ const passportLocal=require('passport-local');
 const MongoStore=require('connect-mongo');
 const sassMiddleware=require('node-sass-middleware');
 
+app.use(express.static(__dirname + '/assets'));
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
 
-app.use(sassMiddleware({
-    src:'./assets/scss',
-    dest:'./assets/css',
-    debug:true,
-    outputStyle:'expanded',
-    prefix:'/css',
+// app.use(sassMiddleware({
+//     src:'./assets/scss',
+//     dest:'./assets/css',
+//     debug:true,
+//     outputStyle:'expanded',
+//     prefix:'/css',
 
-}))
+// }))
+
 app.use(bodyParser.urlencoded());
 
 app.use(cookieParser());
