@@ -24,7 +24,6 @@ app.set('layout extractScripts', true);
 //     debug:true,
 //     outputStyle:'expanded',
 //     prefix:'/css',
-
 // }))
 
 app.use(bodyParser.urlencoded());
@@ -44,8 +43,6 @@ app.use(session({
     // store: new MongoStore({
     //         mongooseConnection:db,
     //         autoRemove:'disabled'
-    //        
-        
     // },
     store: MongoStore.create({ mongoUrl: 'mongodb://localhost/test-app' })
     // function (err) {

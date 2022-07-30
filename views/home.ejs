@@ -7,10 +7,19 @@
 
 <section id="feed-posts">
     <% if(locals.user){%>
-    <h4>Posts</h4>
+    <h4>Be Social Do Post</h4>
     <form action="/users/posts/createpost" method="post">
         <textarea name="content" id="" cols="30" rows="3" placeholder="type here"></textarea>
         <input type="submit" value="post">
     </form>
+
+<div class="posted-posts "> 
+    <h2>your posts</h2>
+    <ul>
+        <% for(key in post){ %>
+        <li> <%= post[key].content %></li>
+        <% } %>
+    </ul>
     <%}%>
+</div>
 </section>
