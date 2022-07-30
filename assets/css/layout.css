@@ -4,5 +4,5 @@ body {
 }
 
 body #layout-main {
-    height: 400px;
+    height: auto;
 }
