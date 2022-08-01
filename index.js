@@ -13,6 +13,10 @@ const passportLocal=require('passport-local');
 const MongoStore=require('connect-mongo');
 const sassMiddleware=require('node-sass-middleware');
 
+app.use(bodyParser.urlencoded());
+
+app.use(cookieParser());
+
 app.use(express.static(__dirname + '/assets'));
 app.use(expressLayouts);
 app.set('layout extractStyles', true);
@@ -26,9 +30,7 @@ app.set('layout extractScripts', true);
 //     prefix:'/css',
 // }))
 
-app.use(bodyParser.urlencoded());
 
-app.use(cookieParser());
 
 
 // set up the view engine

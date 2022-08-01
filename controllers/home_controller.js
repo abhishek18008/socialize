@@ -10,20 +10,13 @@ const Post = require('../models/posts');
 // })
 
 module.exports.home = function (req, res) {
-    // Post.find({},function (err , posts) {
-    //     return res.render('home', {
-    //         title: "Home",
-    //         post:posts,
-    // })}
-
-    Post.find({}).populate('user').exec(function (err, post) {
+    Post.find({})
+    .populate('user').exec(function(err, posts){
         return res.render('home', {
-            title: "Home",
-            post: post,
-        })
-
-
-    });
+            title: "Codeial | Home",
+            post:  posts
+        });
+    })
 }
 
 

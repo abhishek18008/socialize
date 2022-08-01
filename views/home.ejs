@@ -3,7 +3,6 @@
     Lets Socialise!
 </h1>
 
-
 <section id="feed-posts">
     <% if(locals.user){%>
         <h4>Be Social Do Post</h4>
@@ -18,9 +17,17 @@
                 <% post.forEach(myFunction) %>
                     <% function myFunction(item, index){%>
                         <li>
-                            <p><%= item.user.name %></p>
-                            <p><%= item.content %></p>
-                            
+                            <h2>
+                                <%= item.user.name %>
+                            </h2>
+                            <h4>
+                                <%= item.content %>
+                            </h4>
+                            <form action="/comment/addcomment" method="post">
+                                <input type="text" name="comment" id="comment" placeholder="type here">
+                                <input type="hidden" name="post" value="<% post %>" >
+                                <button type=" submit">add a comment</button>
+                            </form>
                         </li>
                         <%}%>
             </ul>
